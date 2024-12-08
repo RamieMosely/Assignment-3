@@ -16,7 +16,7 @@ class Shape:
     
     def get_description(self):
         #Returns a desciption as a string about the shape
-        return f"{self._color} {self.get_ype()}"
+        return f"{self._color} {self.get_type()}"
     
     def get_perimeter(self):
         #Calculates the perimeter of shape

@@ -24,7 +24,7 @@ class Triangle(Shape):
     
     def get_description(self):
         #Creates description of triangle
-        return f"{self.color} triangle with sides {self._side1}, {self._side2}, {self._side3}"
+        return f"{self._color} triangle with sides {self._side1}, {self._side2}, {self._side3}"
     
 
     def get_perimeter(self):

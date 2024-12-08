@@ -33,7 +33,7 @@ class Program:
                 if choice == '1':
                     self._add_shape()
                 elif choice == '2':
-                    self.remove_shape()
+                    self._remove_shape()
                 elif choice == '3':
                     self._show_shape_info()
                 elif choice == '4':
@@ -115,88 +115,88 @@ class Program:
 
 
 
-        def _remove_shape(self):
-            if not self._shapes:
-                print("\nThere are no shapes to remove!")
-                return
+    def _remove_shape(self):
+        if not self._shapes:
+            print("\nThere are no shapes to remove!")
+            return
             
-            print("\nWhich shape would you like to remove!")
-            for i, shape in enumerate(self._shapes, 1):
-                print(f"({i}) {shape.get_description()}")
+        print("\nWhich shape would you like to remove!")
+        for i, shape in enumerate(self._shapes, 1):
+            print(f"({i}) {shape.get_description()}")
 
-            choice = input("Enter the number to remove or press Enter to go back: ").strip()
+        choice = input("Enter the number to remove or press Enter to go back: ").strip()
             
-            if not choice:
-                return
+        if not choice:
+            return
             
-            try:
-                index = int(choice) - 1
+        try:
+            index = int(choice) - 1
 
-                if 0 <= index < len(self._shapes):
+            if 0 <= index < len(self._shapes):
                     removed_shape = self._shapes.pop(index)
                     self._removed_shapes += 1
                     print(f"\n{removed_shape.get_description()} has been removed.")
 
-                else:
-                    print("\nThats not a valid shape number!")
+            else:
+                print("\nThats not a valid shape number!")
 
-            except ValueError:
-                print("\nPlease enter a valid number!")
-
-
+        except ValueError:
+            print("\nPlease enter a valid number!")
 
 
-        def _show_shape_info(self):
-            #Shows all the details about the shape
-            if not self.shapes:
-                print("\nThere are no shapes to show!")
-                return
 
-            print("\nWhich shapes would you like to know more about?")
-            for i, shape in enumerate(self._shapes, 1):
-                print(f"({i}) {shape.get_description()}")
 
-            choice = input("Enter a number or press enter to go back! ").strip()
+    def _show_shape_info(self):
+        #Shows all the details about the shape
+        if not self._shapes:
+            print("\nThere are no shapes to show!")
+            return
 
-            if not choice:
-                return
+        print("\nWhich shapes would you like to know more about?")
+        for i, shape in enumerate(self._shapes, 1):
+            print(f"({i}) {shape.get_description()}")
+
+        choice = input("Enter a number or press enter to go back! ").strip()
+
+        if not choice:
+            return
             
-            try:
-                index = int(choice) - 1
+        try:
+            index = int(choice) - 1
 
-                if 0 <= index < len(self._shapes):
-                    shape = self._shapes[index]
-                    print(f"\n{shape.get_description()}")
-                    print(f"Perimeter: {shape.get_perimeter():.2f}")
-                    print(f"Area: {shape.get_area()}")
+            if 0 <= index < len(self._shapes):
+                shape = self._shapes[index]
+                print(f"\n{shape.get_description()}")
+                print(f"Perimeter: {shape.get_perimeter():.2f}")
+                print(f"Area: {shape.get_area()}")
 
-                else:
-                    print("\nUh Oh! Thats not a valid shape number!")
+            else:
+                print("\nUh Oh! Thats not a valid shape number!")
             
-            except ValueError:
-                print("\nPlease eneter a valid number!")
+        except ValueError:
+            print("\nPlease eneter a valid number!")
 
 
 
-        def _show_collection_stats(self):
+    def _show_collection_stats(self):
 
-            if not self._shapes:
-                print("\nThere are no shapes in the collection")
-                return
-            
-            print("\nCollection Statictics:")
-            print(f"Total shapes in collection: {len(self._shapes)}")
-            print(f"Total shapes ever created: {Shape.s_count}")
-            print(f"Shapes removed: {self._removed_shapes}")
+        if not self._shapes:
+            print("\nThere are no shapes in the collection")
+            return
+        
+        print("\nCollection Statictics:")
+        print(f"Total shapes in collection: {len(self._shapes)}")
+        print(f"Total shapes ever created: {Shape.s_count}")
+        print(f"Shapes removed: {self._removed_shapes}")
 
-            shapes_types = set(shape.get_type() for shape in self._shapes)
-            print(f"Types of shapes: {shapes_types}")
+        shapes_types = set(shape.get_type() for shape in self._shapes)
+        print(f"Types of shapes: {shapes_types}")
 
-            colors = set(shape.color for shape in self._shape)
-            print(f"Colors used: {colors}")
+        colors = set(shape.color for shape in self._shapes)
+        print(f"Colors used: {colors}")
 
-            total_area = sum(shape.get_area() for shape in self.shapes)
-            print(f"Total area of all shapes: {total_area:.2f}")
+        total_area = sum(shape.get_area() for shape in self.shapes)
+        print(f"Total area of all shapes: {total_area:.2f}")
 
 shape_program = Program()
 shape_program.run()
