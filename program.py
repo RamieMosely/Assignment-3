@@ -101,6 +101,7 @@ class Program:
             elif shape_choice == "5":
                 side = float(input("Enter side length: "))
                 new_shape = Pentagon(color, side)
+                
             else:
                 print("That is not a valid type of shape!")
                 return
