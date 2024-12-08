@@ -50,15 +50,14 @@ class Triangle(Shape):
 
         return area
     
-    @property
-    def side1(self):
+
+    def get_side1(self):
         return self._side1
     
-    @property
-    def side2(self):
+
+    def get_side2(self):
         return self._side2
     
-    @property
-    def side3(self):
+    def get_side3(self):
         return self._side3
     

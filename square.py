@@ -33,7 +33,6 @@ class Square(Shape):
 
         return self._side * self._side
     
-    @property
-    def side(self):
+    def get_side(self):
         return self._side
 

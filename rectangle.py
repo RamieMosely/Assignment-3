@@ -31,10 +31,10 @@ class Rectangle(Shape):
         #Calculates the area of the rectangle
         return self._length * self._width
     
-    @property
-    def length(self):
+
+    def get_length(self):
         return self._length
     
-    @property
-    def width(self):
+
+    def get_width(self):
         return self._width

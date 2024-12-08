@@ -26,7 +26,7 @@ class Shape:
         #Calculates the area of the shape.
         raise NotImplementedError("This subclass needs to implement a method!")
 
-    @property
-    def color(self):
+
+    def get_color(self):
         #color accessor method
         return self._color

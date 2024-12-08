@@ -29,6 +29,6 @@ class Circle(Shape):
     def get_area(self):
         return math.pi * (self._radius ** 2)
     
-    @property
-    def radius(self):
+
+    def get_radius(self):
         return self._radius
