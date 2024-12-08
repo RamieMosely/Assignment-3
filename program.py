@@ -76,7 +76,8 @@ class Program:
         if not shape_choice:
             return
         
-        color = input("What color should it be? ").strip().lower
+        color = input("What color should it be? ").strip().lower()
+
 
         try:
             if shape_choice == '1':
@@ -192,7 +193,7 @@ class Program:
         shapes_types = set(shape.get_type() for shape in self._shapes)
         print(f"Types of shapes: {shapes_types}")
 
-        colors = set(shape.color for shape in self._shapes)
+        colors = set(shape._color for shape in self._shapes)
         print(f"Colors used: {colors}")
 
         total_area = sum(shape.get_area() for shape in self.shapes)

@@ -2,10 +2,10 @@ from shape import Shape
 import math
 
 class Triangle(Shape):
-    def __init__(self, color, side1, side2, side3):
+    def __init__(self, _color, side1, side2, side3):
         #Initilizae a triangle with color and three sides
 
-        Shape.__init__(self, color)
+        Shape.__init__(self, _color)
 
         #Check to see is these sides can make a triangle
         if (side1 <= 0 or side2 <= 0 or side3 <=0 or
