@@ -32,7 +32,7 @@ class Rectangle(Shape):
         return self._length * self._width
     
     @property
-    def length(self)
+    def length(self):
         return self._length
     
     @property
